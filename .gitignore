@@ -1,0 +1,26 @@
+# macOS Finder metadata
+.DS_Store
+._*
+
+# Local editor and OS files
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# ───────── 上线：以下内容不进公开仓库 ─────────
+# 视频改由 Cloudflare R2 托管（GitHub 单文件限 100MB、Pages 限 ~1GB，放不下 4.7GB）
+assets/videos/
+
+# 工作过程文件（准备稿 / 抽帧 / 源文件，仅本地保留）
+上线准备/
+新增项目/
+*.pptx
+assets/_brows.js.txt
+
+# Claude Code 本地配置与记忆
+.claude/
+
+# 上线辅助文件（清单 / 手册，仅本地参考，不必公开）
+R2上传清单.txt
+上线操作手册.md
