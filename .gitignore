@@ -15,6 +15,7 @@ assets/videos/
 # 工作过程文件（准备稿 / 抽帧 / 源文件，仅本地保留）
 上线准备/
 新增项目/
+白猿山作品集合1/
 *.pptx
 assets/_brows.js.txt
 
@@ -24,3 +25,4 @@ assets/_brows.js.txt
 # 上线辅助文件（清单 / 手册，仅本地参考，不必公开）
 R2上传清单.txt
 上线操作手册.md
+compress_for_r2.ps1
