@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>白猿山 · 商业视觉服务商 | Baiyuanshan — Commercial Visual Studio</title>
-<meta name="description" content="白猿山（Baiyuanshan）—— 立足国家级影视工业、深入 AI 视觉前沿的商业视觉服务商。商业策划 · 视觉制作 · AIGC · 赋能培训。A commercial visual studio rooted in national-level film production and the frontier of AI-driven content.">
+<meta name="description" content="白猿山（Baiyuanshan）—— 立足国家级影视工业、深入 AI 视觉前沿的商业视觉服务商。IP内容孵化 · 影视级视觉 · AIGC赋能。A commercial visual studio rooted in national-level film production and the frontier of AI-driven content.">
 <meta name="theme-color" content="#ff391e">
 <link rel="canonical" href="https://baiyuanshan.com/">
 <link rel="icon" type="image/png" href="media/logo_mark.png?v=3">
@@ -17,8 +17,17 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/plyr/plyr.css">
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="preload" as="image" href="media/intro/intro_01.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="media/intro/intro_02.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="media/intro/intro_03.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="media/intro/intro_04.jpg">
+<link rel="preload" as="image" href="media/intro/intro_05.jpg">
+<link rel="preload" as="image" href="media/intro/intro_06.jpg">
+<link rel="preload" as="image" href="media/intro/intro_07.jpg">
+<link rel="preload" as="image" href="media/intro/intro_08.jpg">
+<link rel="preload" as="image" href="media/intro/intro_09.jpg">
+<link rel="preload" as="image" href="media/intro/intro_10.jpg">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
@@ -64,13 +73,16 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
 .pl-fr{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;will-change:opacity}
 .pl-fr.on{opacity:1}
 .pl-montage::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 120% at 50% 50%,transparent 55%,rgba(0,0,0,.45) 100%)}
-.pl-flash{position:absolute;inset:0;z-index:5;opacity:0;pointer-events:none;mix-blend-mode:screen;display:flex;align-items:center;justify-content:center}
-.pl-flash::before{content:"";width:min(80vw,860px);height:min(34vh,260px);background:radial-gradient(closest-side,rgba(255,255,255,.4),rgba(255,255,255,.1) 46%,transparent 72%);filter:blur(24px)}
-.pl-logowrap{position:absolute;z-index:6;left:50%;top:50%;transform:translate(-50%,-50%) scale(1);opacity:0;width:min(64vw,720px);aspect-ratio:1194/305;pointer-events:none;will-change:transform,opacity,filter}
+.pl-logowrap{position:absolute;z-index:6;left:50%;top:50%;transform:translate(-50%,-50%) scale(1);opacity:0;width:min(64vw,720px);aspect-ratio:1194/305;pointer-events:none;will-change:transform,opacity}
 .pl-logosplit{position:absolute;inset:0;display:flex;will-change:clip-path;clip-path:inset(0 50% 0 50%)}
-.pl-lpart{height:100%;background-image:url("logo_horizontal.png");background-repeat:no-repeat;background-size:auto 100%;filter:brightness(0) invert(1)}
-.pl-lmark{width:24.04%;background-position:left center}
-.pl-ltext{width:75.96%;background-position:right center}
+.pl-lpart{height:100%}
+.pl-lmark::before,.pl-lmark::after,.pl-ltext{background:url("logo_horizontal.png") left center/auto 100% no-repeat}
+.pl-lmark{position:relative;width:25.46%}
+.pl-lmark::before,.pl-lmark::after{content:"";position:absolute;inset:0}
+/* The beam is symmetric. Use its clean lower corner in place of the registered mark. */
+.pl-lmark::before{clip-path:polygon(0 0,82% 0,82% 30%,100% 30%,100% 100%,0 100%)}
+.pl-lmark::after{clip-path:inset(70% 0 0 82%);transform:scaleY(-1)}
+.pl-ltext{width:74.54%;background-position:right center;filter:brightness(0) invert(1)}
 .pl-meta{position:absolute;z-index:7;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(248,248,248,.86)}
 .pl-meta.t{top:18px;left:18px}
 .pl-meta.br{bottom:18px;right:18px;text-align:right}
@@ -173,7 +185,7 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
 .intro .val b{color:var(--red);font-weight:600}
 .intro .sub{grid-column:1/span 5;margin-top:18px;color:var(--muted);font-size:15px;line-height:1.5}
 
-/* ════════ CAPABILITIES (四大业务) ════════ */
+/* ════════ CAPABILITIES (三大部门) ════════ */
 .caps-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .cap{background:var(--grey);padding:34px 16px 30px;display:flex;flex-direction:column;gap:14px;position:relative;transition:background .5s var(--ease),color .5s var(--ease)}
 .cap .cn{font-family:var(--mono);font-size:11px;color:var(--red)}
@@ -290,6 +302,16 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
 .wdet__g .g{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--black)}
 .wdet__g .g .gl{position:absolute;left:8px;bottom:8px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--white);background:rgba(11,11,11,.55);padding:2px 7px;z-index:2}
 .wdet__g.g9{grid-template-columns:repeat(3,1fr)}
+#wk_71 .wdet__g .g{aspect-ratio:16/9}
+#wk_72 .wdet__g{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:1023px){#wk_72 .wdet__g{grid-row:2}}
+@media(max-width:679px){
+  #wk_72 .wdet__g .g{aspect-ratio:auto;background:transparent}
+  #wk_72 .wdet__g img{aspect-ratio:4/3;height:auto}
+  #wk_72 .wdet__g .gl{position:static;display:block;padding:4px 0;color:inherit;background:transparent}
+}
+.wdet__rk a{text-decoration:underline;text-underline-offset:.2em}
+@media(max-width:679px){#wk_71 .wdet__g{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* cursor preview */
 .cursorimg{position:fixed;left:0;top:0;width:340px;height:226px;z-index:700;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.85) rotate(3deg);transition:opacity .3s var(--ease),transform .3s var(--ease);overflow:hidden;will-change:transform}
@@ -320,7 +342,7 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
   .h-loc{display:none}
   .studio-grid{grid-template-columns:repeat(4,1fr)}
   .stars-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:28px 12px}
-  .caps-grid{grid-template-columns:repeat(2,1fr)}
+  .caps-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .logo-wall{grid-template-columns:repeat(3,1fr)}
   .steps{grid-template-columns:repeat(3,1fr)}
   .wrow__meta{display:block}
@@ -357,7 +379,6 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
   .intro .big{grid-column:1/span 7;font-size:clamp(48px,5.4vw,90px)}
   .intro .val{grid-column:1/span 7;margin-top:46px}
   .intro .sub{grid-column:1/span 7}
-  .caps-grid{grid-template-columns:repeat(4,1fr)}
   .logo-wall{grid-template-columns:repeat(5,1fr)}
   .footer .eye,.footer .csub{grid-column:1/span 9}
   .footer .cta{grid-column:1/span 9}
@@ -536,7 +557,6 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
     <div class="pl-fr" data-bg="media/intro/intro_09.jpg"></div>
     <div class="pl-fr" data-bg="media/intro/intro_10.jpg"></div>
   </div>
-  <div class="pl-flash" id="plFlash"></div>
   <div class="pl-logowrap" id="plLogoWrap">
     <div class="pl-logosplit" id="plLogoSplit"><span class="pl-lpart pl-lmark"></span><span class="pl-lpart pl-ltext"></span></div>
   </div>
@@ -596,7 +616,7 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
   <section class="hero" id="hero">
     <div class="hero__sticky">
       <div class="hero__media" id="heroMedia">
-        <figure class="hero__fig"><img id="heroImg" src="media/works/chengdu_h.jpg" alt="白猿山作品" fetchpriority="high"></figure>
+        <figure class="hero__fig"><img id="heroImg" alt="白猿山作品" decoding="async"></figure>
       </div>
       <div class="acetate"></div>
       <div class="hero__bot">
@@ -622,18 +642,35 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
     </div>
   </section>
 
-  <!-- ════════ CAPABILITIES (四大业务) ════════ -->
+  <!-- ════════ CAPABILITIES (三大部门) ════════ -->
   <section class="sec sec--grey">
     <div class="grid sec-head rv">
-      <div class="lab mono-up">What We Do <span class="n">[04]</span></div>
-      <h2 class="ttl" data-en="Four Disciplines, One Studio">四大业务 一体协同</h2>
+      <div class="lab mono-up">What We Do <span class="n">[03]</span></div>
+      <h2 class="ttl" data-en="Three Departments, One Studio">三大部门 一体协同</h2>
     </div>
     <div class="gutters">
       <div class="caps-grid rv">
-        <article class="cap"><span class="cn">01</span><span class="ce">Creative</span><span class="cz" data-en="Commercial Planning">商业策划</span><span class="ct" data-en="— Creative that means business —">— 懂商业的创意 —</span><span class="cd" data-en="From brand positioning to content strategy, every idea is aimed at a real commercial goal.">从品牌定位到内容策略，让每一次创作都对准真实的商业目标。</span><span class="ci"><span data-en="Content strategy">内容策略</span><span data-en="Full-service planning">全案策划</span></span></article>
-        <article class="cap"><span class="cn">02</span><span class="ce">Production</span><span class="cz" data-en="Visual Production">视觉制作</span><span class="ct" data-en="— Film-grade quality —">— 影视级品质 —</span><span class="cd" data-en="A full live-action and post pipeline — brand films, commercials and image films delivered at film-grade.">实拍 + 后期全流程，宣传片、广告片、形象片影视级交付。</span><span class="ci"><span data-en="Live-action">实拍拍摄</span><span data-en="Post & compositing">后期合成</span></span></article>
-        <article class="cap"><span class="cn">03</span><span class="ce">AI Creation</span><span class="cz" data-en="AIGC">AIGC</span><span class="ct" data-en="— Production at scale —">— 高效的产能 —</span><span class="cd" data-en="AI imagery fused with live-action — cinematic texture delivered at production scale.">AI 影像与实拍合成，保持影视质感的同时实现规模化产能。</span><span class="ci"><span data-en="Commercial use">商业应用</span><span data-en="Live-action fusion">实拍合成</span></span></article>
-        <article class="cap"><span class="cn">04</span><span class="ce">Education</span><span class="cz" data-en="Enablement & Training">赋能培训</span><span class="ct" data-en="— Building talent —">— 人才孵化 —</span><span class="cd" data-en="Turning methodology into team capability — corporate training, hands-on coaching and campus partnerships.">把方法论沉淀为团队能力，企业内训、陪跑与校企共创。</span><span class="ci"><span data-en="In-house training">企业内训</span><span data-en="Campus partnership">校企合作</span></span></article>
+        <article class="cap">
+          <span class="cn">01</span><span class="ce">Development</span>
+          <span class="cz" data-en="IP Development">IP内容孵化</span>
+          <span class="ct" data-en="— Original series —">— 原创系列内容 —</span>
+          <span class="cd" data-en="We develop original ideas into series, from character concepts and story outlines to individual scripts.">从人物设定、故事大纲到分集脚本，把原创构想开发成系列内容。</span>
+          <span class="ci"><span data-en="IP strategy">IP策划</span><span data-en="Story development">故事开发</span></span>
+        </article>
+        <article class="cap">
+          <span class="cn">02</span><span class="ce">Production</span>
+          <span class="cz" data-en="Cinematic Visuals">影视级视觉</span>
+          <span class="ct" data-en="— Film-grade quality —">— 影视级品质 —</span>
+          <span class="cd" data-en="We shoot and finish commercials, brand films and corporate films, from live action to final delivery.">从实拍到后期，完成宣传片、广告片和品牌形象片的制作与交付。</span>
+          <span class="ci"><span data-en="Live action">实拍拍摄</span><span data-en="Post &amp; compositing">后期合成</span></span>
+        </article>
+        <article class="cap">
+          <span class="cn">03</span><span class="ce">Applied AI</span>
+          <span class="cz" data-en="AIGC Enablement">AIGC赋能</span>
+          <span class="ct" data-en="— Production and training —">— 创作与培训 —</span>
+          <span class="cd" data-en="We combine AI imagery with live action and train teams to use these techniques in their own productions.">将 AI 影像与实拍素材合成，通过企业内训和项目实操，帮助团队掌握制作方法。</span>
+          <span class="ci"><span data-en="AI imagery">AI影像</span><span data-en="Team training">团队培训</span></span>
+        </article>
       </div>
       <p class="caps-foot rv" data-en="From <b>outsourcing content</b> to <b>producing it sustainably in-house</b> — that is where long-term competitiveness lives.">从「外包式做内容」升级为<b>「内部可持续生产内容」</b>——这才是长期竞争力。</p>
     </div>
@@ -744,16 +781,16 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
   <!-- ════════ THE WORK (项目精选) ════════ -->
   <section class="sec sec--grey" id="work">
     <div class="grid sec-head rv">
-      <div class="lab mono-up">Selected Works <span class="n" id="workCount">[59]</span></div>
+      <div class="lab mono-up">Selected Works <span class="n" id="workCount"></span></div>
       <h2 class="ttl" data-en="Selected Works">项目精选</h2>
     </div>
     <div class="gutters">
       <div class="work-tools rv" id="filters"></div>
       <div class="wstage" id="wstage" aria-label="项目预览">
-        <div class="wstage__layer on" id="wstageA" style="background-image:url('media/w_cctv_2.jpg')"></div>
+        <div class="wstage__layer on" id="wstageA"></div>
         <div class="wstage__layer" id="wstageB"></div>
         <span class="wstage__hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span data-en="Tap to view">点按展开</span></span>
-        <div class="wstage__cap"><span class="wstage__idx" id="wstageIdx">01</span><span class="wstage__ttl" id="wstageTtl">加快乡村振兴</span><span class="wstage__meta" id="wstageMeta">中宣部 · CCTV 公益传播</span></div>
+        <div class="wstage__cap"><span class="wstage__idx" id="wstageIdx"></span><span class="wstage__ttl" id="wstageTtl"></span><span class="wstage__meta" id="wstageMeta"></span></div>
       </div>
       <div class="work-list rv" id="workList"></div>
     </div>
@@ -774,7 +811,7 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
     </div>
     <div class="fcol fcol--1 rv"><div class="l">Location</div><div class="v" data-en="Changsha, China">湖南长沙</div></div>
     <div class="fcol fcol--2 rv"><div class="l">Company</div><div class="v" data-en="Changsha Baiyuanshan<br>Culture &amp; Technology Co., Ltd.">长沙白猿山<br>文化科技有限责任公司</div></div>
-    <div class="fcol fcol--3 rv"><div class="l">Scope</div><div class="v" data-en="Strategy · Production · AIGC · Enablement">商业策划 · 视觉制作 · AIGC · 赋能培训</div></div>
+    <div class="fcol fcol--3 rv"><div class="l">Scope</div><div class="v" data-en="IP Development · Cinematic Visuals · AIGC Enablement">IP内容孵化 · 影视级视觉 · AIGC赋能</div></div>
     <div class="fcol fcol--4 rv"><div class="l">Contact</div><div class="v" data-en="Li Jie · +86 187 1118 8024">李杰 · +86 187 1118 8024</div></div>
     <div class="fbot rv"><span>© 2026 白猿山文化科技 · BY YOUR SIDE VISION</span><span class="credits"></div>
   </div>
@@ -782,8 +819,18 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
 
 <div class="cursorimg" id="cursorImg" aria-hidden="true"><img src="" alt=""></div>
 
-<script src="assets/plyr/plyr.js"></script>
 <script>
+// 视频播放器资源在语言选择出现后才下载，不与完整开场争抢带宽。
+(function(){
+  let started=false;
+  function loadPlyrAssets(){
+    if(started)return;started=true;
+    const css=document.createElement('link');css.rel='stylesheet';css.href='assets/plyr/plyr/plyr.css';document.head.appendChild(css);
+    const js=document.createElement('script');js.src='assets/plyr/plyr/plyr.js';js.async=true;document.head.appendChild(js);
+  }
+  window.addEventListener('intro:language-ready',loadPlyrAssets,{once:true});
+})();
+
 /* ════════ SHOW REEL · 每段 8 秒 · 斯坦李从第20秒开始 · 自然雅舍从第5秒开始 ════════ */
 const REEL_IMG="media/";
 /* 视频托管：上线指向 Cloudflare R2（video.baiyuanshan.com）；本地预览视频时改回 "assets/videos/" */
@@ -817,16 +864,37 @@ const REEL=[
   REEL.forEach((item,index)=>{
     const poster=document.createElement('div');
     poster.className='sr__poster'+(index===0?' on':'');
-    poster.style.backgroundImage=`url("${REEL_IMG+item.img}")`;
     posters.appendChild(poster);posterEls.push(poster);
 
     const thumb=document.createElement('button');
     thumb.type='button';thumb.className='sr__thumb'+(index===0?' on':'');
     thumb.setAttribute('aria-label',`播放 ${item.title}`);
-    thumb.innerHTML=`<span class="ph" style="background-image:url('${REEL_IMG+item.img}')"></span><span class="n">${String(index+1).padStart(2,'0')}</span>`;
+    thumb.innerHTML=`<span class="ph"></span><span class="n">${String(index+1).padStart(2,'0')}</span>`;
     thumb.addEventListener('click',()=>go(index,true));
     thumbs.appendChild(thumb);thumbEls.push(thumb);
   });
+
+  // 开场期间不抢占带宽；语言选择出现后才预热首张海报，进入首页后再补齐其余海报。
+  const reelImageState=REEL.map(()=>0);
+  function loadReelImage(index){
+    if(index<0||index>=REEL.length||reelImageState[index])return;
+    reelImageState[index]=1;
+    const url=REEL_IMG+REEL[index].img,im=new Image();
+    im.decoding='async';
+    im.onload=()=>{
+      reelImageState[index]=2;
+      posterEls[index].style.backgroundImage=`url("${url}")`;
+      const ph=thumbEls[index].querySelector('.ph');if(ph)ph.style.backgroundImage=`url("${url}")`;
+    };
+    im.onerror=()=>{reelImageState[index]=0;};
+    im.src=url;
+  }
+  function warmReelImages(active){
+    loadReelImage(active);
+    const rest=()=>REEL.forEach((_,i)=>{if(i!==active)loadReelImage(i);});
+    if('requestIdleCallback' in window)requestIdleCallback(rest,{timeout:1600});
+    else setTimeout(rest,500);
+  }
 
   const fitCanvas=document.createElement('canvas');
   function fitVideo(){
@@ -861,6 +929,7 @@ const REEL=[
   function go(index,force){
     if(!enabled||!visible)return;
     if(index===current&&!force)return;
+    loadReelImage(index);
     posterEls[current]&&posterEls[current].classList.remove('on');
     thumbEls[current]&&thumbEls[current].classList.remove('on');
     current=index;const item=REEL[index];
@@ -875,7 +944,7 @@ const REEL=[
     metaEl.textContent=en&&item.meta_en?item.meta_en:item.meta;
   }
   window.__reelRelang=function(){if(current>=0)paintCaption(REEL[current]);};
-  function start(){enabled=true;go(current<0?0:current,true);}
+  function start(){enabled=true;const index=current<0?0:current;warmReelImages(index);go(index,true);}
   function pause(){stopTimers();video.pause();}
   video.addEventListener('ended',()=>{
     const item=REEL[current];if(!item||!visible)return;
@@ -898,6 +967,7 @@ const REEL=[
     const r=section.getBoundingClientRect();
     if(r.bottom>0&&r.top<innerHeight){visible=true;start();}
   });
+  window.addEventListener('intro:language-ready',()=>loadReelImage(0),{once:true});
 })();
 
 /* ════════ WORK DATA ════════ */
@@ -914,6 +984,16 @@ const IMG="media/";
 /* 视频托管：与 REEL_VIDEO 一致（Cloudflare R2）；本地预览视频时改回 "assets/videos/" */
 const VID="https://video.baiyuanshan.com/";
 const WORKS=[
+ {n:71,cat:"F",title:"AIGC剧集",title_en:"AIGC Drama Series",
+  creditLabel:"Adapted from",client:"纪红建《哑巴红军》",client_en:"The Silent Red Army Soldier by Ji Hongjian",
+  type:"历史题材 AI 微短剧 · 16 集",type_en:"Historical AI drama · 16 episodes",
+  eyebrow:"《哑巴红军》",eyebrow_en:"The Silent Red Army Soldier",
+  desc:"长征途中，一名聋哑青年被误认为是敌方探子。他如何让战士们理解自己，又如何成为他们的战友？这部微短剧改编自纪红建的同名报告文学，跟随主人公从雪山上的行军队伍走到荣军院的庭院。",
+  desc_en:"During the Long March, a young deaf man who does not speak is mistaken for a spy. How does he earn the soldiers’ trust and become their comrade? Adapted from Ji Hongjian’s nonfiction book, the series follows him from snowbound mountain passes to the courtyard of a veterans’ home.",
+  sourceUrl:"https://weibo.com/2/detail/5366698012054808",hero:"works/red_army_portrait.jpg",
+  g:[["works/red_army_battle.jpg","战地上空","Over the battlefield"],["works/red_army_snow.jpg","雪山行军","On the snowy pass"],
+     ["works/red_army_river.jpg","暮色涉水","Crossing at dusk"],["works/red_army_courtyard.jpg","荣军院清晨","Morning at the veterans’ home"],
+     ["works/red_army_water.jpg","挑水","Carrying water"]]},
  {n:1,cat:"A",title:"加快乡村振兴",client:"中宣部 · CCTV 公益传播",type:"国家级主题宣传片 / 公益传播",eyebrow:"National Project · 主题宣传片",desc:"为中宣部·CCTV 公益传播打造加快乡村全面振兴主题片，以影视级镜头记录乡村振兴的真实图景，实拍 + AI 高效完成国家级表达。",svc:"创意脚本 · 实拍 + AI · 后期包装",title_en:"Rural Revitalization",client_en:"Publicity Dept · CCTV",type_en:"National Theme Film / Public Communication",eyebrow_en:"National Project · Theme Film",desc_en:"A national theme film on accelerating rural revitalization for the Publicity Department and CCTV — film-grade imagery capturing the real face of the countryside, delivered efficiently with live-action and AI.",svc_en:"Creative script · Live-action + AI · Post",hero:"w_cctv_2.jpg",vid:"rural_revitalization_90s.mp4",g:[["works/cctv_xczx.jpg","水乡","Watertown"],["w_cctv_3.jpg","文化振兴","Cultural revival"],["w_cctv_4.jpg","乡野","Countryside"]]},
  {n:2,cat:"A",title:"二十四节气倒计时",client:"北京 2022 冬奥会开幕式",type:"开幕式短片 / 国家级大事件",eyebrow:"Beijing 2022 · 开幕式短片",desc:"北京 2022 冬奥会开幕式·二十四节气倒计时短片，以中国节气美学惊艳世界舞台，作为开场惊艳全球观众。",svc:"影像创意 · 制作 · 后期",title_en:"24 Solar Terms Countdown",client_en:"Beijing 2022 Opening Ceremony",type_en:"Opening-Ceremony Film / National Event",eyebrow_en:"Beijing 2022 · Opening Film",desc_en:"The 24 Solar Terms countdown film for the Beijing 2022 Winter Olympics opening ceremony — Chinese seasonal aesthetics that opened the Games and captivated a global audience.",svc_en:"Visual creative · Production · Post",hero:"works/dongao_h.jpg",heroPos:"center 42%",vid:"beijing2022_24terms.mp4",g:[["works/dongao_g1.jpg","节气","Solar terms"],["works/dongao_g2.jpg","东方美学","Eastern aesthetics"],["works/dongao_g3.jpg","开场","Opening"]]},
  {n:3,cat:"A",title:"大地的孩子",client:"中国人保",type:"主旋律扶贫纪录片 / 电影质感",eyebrow:"Documentary · 主旋律纪录片",desc:"中国人保扶贫纪录片大地的孩子，以电影质感的影像语言讲述大地与孩子的故事，温度与制作水准并重。",svc:"纪录拍摄 · 剪辑 · 调色",title_en:"Children of the Land",client_en:"PICC",type_en:"Poverty-Relief Documentary / Cinematic",eyebrow_en:"Documentary · Main Melody",desc_en:"PICC's poverty-relief documentary 'Children of the Land' tells the story of a land and its children in cinematic language — warmth and craft in equal measure.",svc_en:"Documentary shoot · Edit · Color",hero:"w_dadi_1.jpg",vid:"picc_children_of_land.mp4",g:[["w_dadi_2.jpg","篝火","Bonfire"],["w_dadi_3.jpg","团圆","Reunion"],["w_dadi_4.jpg","人物","Portrait"]]},
@@ -980,12 +1060,11 @@ const WORKS=[
  {n:64,cat:"E",title:"时光彩贝",client:"自制 · 微电影",type:"微电影 / 105s",eyebrow:"Short Film · 微电影",desc:"原创微电影时光彩贝，以一枚彩贝串起时光里的记忆，于细腻情感中见制作的诚意。",svc:"编剧 · 拍摄 · 后期",title_en:"Shell of Time",client_en:"In-house · Short Film",type_en:"Short Film / 105s",eyebrow_en:"Short Film · Original",desc_en:"Original short film 'Shell of Time' — a colored shell threading memories through the years, sincerity of craft within delicate emotion.",svc_en:"Script · Shoot · Post",hero:"covers/time_shellfish.jpg",vid:"time_shellfish.mp4",g:[]},
  {n:65,cat:"E",title:"快递人生 · 预告",client:"自制 · 微电影",type:"微电影预告 / 剧情短片",eyebrow:"Trailer · 微电影",desc:"微电影快递人生预告片，以一名快递员的奔忙日常，预告一段关于普通人尊严的剧情短片。",svc:"编剧 · 拍摄 · 剪辑",title_en:"Courier Life · Trailer",client_en:"In-house · Short Film",type_en:"Short-Film Trailer / Drama",eyebrow_en:"Trailer · Short Film",desc_en:"The trailer for short film 'Courier Life' — the hurried days of a delivery rider, foreshadowing a drama about the dignity of ordinary people.",svc_en:"Script · Shoot · Edit",hero:"covers/courier_life_trailer.jpg",vid:"courier_life_trailer.mp4",g:[]},
  {n:66,cat:"E",title:"改变世界的中国植物",client:"纪录短片",type:"自然人文纪录 / 纪录短片",eyebrow:"Documentary · 自然人文",desc:"纪录短片改变世界的中国植物，以植物为线索，讲述中国草木如何走向世界、改变世界。",svc:"拍摄 · 剪辑 · 调色",title_en:"Chinese Plants That Changed the World",client_en:"Documentary Short",type_en:"Nature & Culture Doc / Short",eyebrow_en:"Documentary · Nature",desc_en:"Documentary short 'Chinese Plants That Changed the World' — following plants as a thread to tell how China's flora reached and reshaped the world.",svc_en:"Shoot · Edit · Color",hero:"covers/chinese_plants.jpg",vid:"chinese_plants.mp4",g:[]},
- {n:67,cat:"E",title:"寻秘亚马逊",client:"纪录片",type:"探索纪录片 / 双语字幕 · 540p",eyebrow:"Documentary · 探索",desc:"探索纪录片寻秘亚马逊，深入雨林记录未知的生命与秘境（源 540p 双语字幕版，按原画质上线）。",svc:"拍摄 · 剪辑 · 字幕",title_en:"Amazon Quest",client_en:"Documentary",type_en:"Exploration Doc / Bilingual Subs · 540p",eyebrow_en:"Documentary · Exploration",desc_en:"Exploration documentary 'Amazon Quest' — deep in the rainforest recording unknown life and hidden wonders (source 540p bilingual-subtitle cut, published at original quality).",svc_en:"Shoot · Edit · Subtitles",hero:"covers/amazon_quest_540p.jpg",vid:"amazon_quest_540p.mp4",g:[]},
+ {n:67,cat:"E",title:"寻秘亚马逊",client:"纪录片",type:"探索纪录片 / 双语字幕 · 540p",eyebrow:"Documentary · 探索",desc:"探索纪录片寻秘亚马逊，深入雨林记录未知的生命与秘境。",svc:"拍摄 · 剪辑 · 字幕",title_en:"Amazon Quest",client_en:"Documentary",type_en:"Exploration Doc / Bilingual Subs · 540p",eyebrow_en:"Documentary · Exploration",desc_en:"Exploration documentary 'Amazon Quest' — deep in the rainforest recording unknown life and hidden wonders (source 540p bilingual-subtitle cut, published at original quality).",svc_en:"Shoot · Edit · Subtitles",hero:"covers/amazon_quest_540p.jpg",vid:"amazon_quest_540p.mp4",g:[]},
  {n:68,cat:"F",title:"国家安全",client:"主旋律 AI 影像",type:"AI 主旋律影像 / 生态·家国",eyebrow:"AI Film · 国家安全",desc:"主旋律 AI 影像国家安全，以江豚、丰收等生态意象隐喻家国安稳，探索 AI 影像在主流价值表达中的全新可能。",svc:"AI 生成 · 剪辑 · 调色",title_en:"National Security",client_en:"Main Melody · AI Film",type_en:"AI Main-Melody Film / Ecology & Nation",eyebrow_en:"AI Film · National Security",desc_en:"The main-melody AI film 'National Security' uses ecological imagery — finless porpoises, the harvest — as a metaphor for a stable nation, exploring new possibilities for AI imagery in mainstream value expression.",svc_en:"AI generation · Edit · Color",hero:"works/gjaq_4.jpg",heroPos:"center 35%",vid:"national_security_2k.mp4",g:[["works/gjaq_2.jpg","丰收","Harvest"],["works/gjaq_5.jpg","生态","Ecology"],["works/gjaq_6.jpg","家国","Nation"]]},
  {n:69,cat:"F",title:"何以娄底",client:"娄底市政府",type:"城市形象片 / AI 影像",eyebrow:"AI City Film · 文旅",desc:"娄底市政府何以娄底 AI 宣传片——大熊山云海、资江商道、富厚堂古建、新化电陶，以 AI 重写城市形象片的周期与层级。",svc:"AI 生成 · 合成 · 包装",title_en:"Why Loudi",client_en:"Loudi Municipal Government",type_en:"City Image Film / AI Imagery",eyebrow_en:"AI City Film · Tourism",desc_en:"Loudi Municipal Government's AI film 'Why Loudi' — the sea of clouds over Daxiong Mountain, the Zijiang trade route, the Fuhou Hall and Xinhua ceramics — rewriting the timeline and scale of the city-image film with AI.",svc_en:"AI generation · Compositing · Packaging",hero:"w_heyilou_1.jpg",heroPos:"center 42%",vid:"loudi_city_film.mp4",g:[["w_heyilou_2.jpg","云海","Sea of clouds"],["w_heyilou_3.jpg","商道","Trade route"],["w_heyilou_4.jpg","古建","Heritage"]]},
  {n:70,cat:"F",title:"江右造物",client:"江西移动",type:"文创 AI 宣传片 / 非遗再生",eyebrow:"AI Creative · 文创",desc:"江西移动「江右造物文创大赛」AI 宣传片，以江豚、滕王阁、纸艺山水等本土意象，探索非遗文创的 AI 表达。",svc:"AI 生成 · 设计 · 合成",title_en:"Jiangyou Creations",client_en:"Jiangxi Mobile",type_en:"Cultural-Creative AI Film / Heritage Revival",eyebrow_en:"AI Creative · Cultural & Creative",desc_en:"An AI film for Jiangxi Mobile's 'Jiangyou Creations' cultural-creative contest — local motifs such as the finless porpoise, the Tengwang Pavilion and paper-art landscapes, exploring AI expression of intangible heritage.",svc_en:"AI generation · Design · Compositing",hero:"w_jzw_1.jpg",heroPos:"center 42%",vid:"jiangxi_mobile_jzw.mp4",g:[["w_jzw_2.jpg","江豚","Porpoise"],["w_jzw_3.jpg","滕王阁","Tengwang Pavilion"],["w_jzw_4.jpg","纸艺","Paper art"]]},
- {n:71,cat:"F",title:"AI 剧集系列 上线平台",client:"红果等流媒体平台",type:"AI 剧集 / 上线红果等平台",eyebrow:"AI Drama Series · Streaming",desc:"已制作多部 AI 剧集并上线红果等平台，验证从「一条 AI 片」到「一套连续剧集」的 AI 量产管线。",svc:"AI 生成 · 剪辑 · 上线运营",title_en:"AI Drama Series · Now Streaming",client_en:"Hongguo & other platforms",type_en:"AI Drama Series / Streaming on Hongguo & more",eyebrow_en:"AI Drama Series · Streaming",desc_en:"Several AI drama series produced and released on platforms such as Hongguo — proving an AI mass-production pipeline that scales from a single AI film to a full series.",svc_en:"AI generation · Edit · Release & ops",hero:"drama_n2c.jpg",heroPos:"center 20%",g:[["drama_redhair.jpg","剧集","Series"],["drama_n3.webp","上线平台","On platforms"]]},
- {n:72,cat:"F",title:"企业 AIGC 培训赋能",client:"院校 · 企业 · 机构",type:"企业 AIGC 培训 / 课程即生产",eyebrow:"Enterprise AIGC Enablement",desc:"为院校与企业提供 AIGC 视觉内容专项培训，课程即生产、学习即交付，让能力真正长在团队里。",svc:"企业内训 · 校企共创 · 陪跑交付",title_en:"Enterprise AIGC Enablement",client_en:"Schools · Enterprises · Institutions",type_en:"Enterprise AIGC Training / Course-as-Production",eyebrow_en:"Enterprise AIGC Enablement",desc_en:"Specialized AIGC visual-content training for schools and enterprises — course as production, learning as delivery, so capability truly takes root in the team.",svc_en:"In-house training · Campus co-creation · Hands-on delivery",hero:"20260613-015104.jpg",heroPos:"center 38%",g:[["train_2.jpeg","校企合作","Campus partnership"],["train_3.jpeg","产教融合","Industry-education"],["train_n5.jpg","互动","Interactive"]]}
+ {n:72,cat:"F",title:"AIGC赋能培训",client:"院校 · 企业 · 机构",type:"AIGC 培训 / 课程即生产",eyebrow:"AIGC Training",desc:"为院校与企业提供 AIGC 视觉内容专项培训，课程即生产、学习即交付，让能力真正长在团队里。",svc:"企业内训 · 校企共创 · 陪跑交付",title_en:"AIGC Training",client_en:"Schools · Enterprises · Institutions",type_en:"AIGC Training / Course-as-Production",eyebrow_en:"AIGC Training",desc_en:"Specialized AIGC visual-content training for schools and enterprises — course as production, learning as delivery, so capability truly takes root in the team.",svc_en:"In-house training · Campus co-creation · Hands-on delivery",hero:"train_3.jpeg",heroPos:"center 38%",g:[["train_2.jpeg","校企合作","Campus partnership"],["20260613-015104.jpg","培训现场","Training session"],["train_n5.jpg","互动","Interactive"],["works/mala_wangzi_aigc_training.jpg","麻辣王子 AIGC 课程结业","Mala Wangzi · Course completion"]]}
 ];
 
 /* ════════ PRELOADER · 开场动效：精选硬切闪映 → 固定角度光束剪影 → Logo 中线展开 → 语言选择 ════════ */
@@ -993,7 +1072,6 @@ const WORKS=[
   const pl=document.getElementById('preloader');
   const montage=document.getElementById('plMontage');
   const frames=[...montage.querySelectorAll('.pl-fr')];
-  const flash=document.getElementById('plFlash');
   const logoWrap=document.getElementById('plLogoWrap');
   const logoSplit=document.getElementById('plLogoSplit');
   const bar=document.getElementById('plbar');
@@ -1023,9 +1101,9 @@ const WORKS=[
     return 'polygon('+pts.map(p=>p[0]+'px '+p[1]+'px').join(',')+')';
   }
 
-  // 时间轴（0.7× 速度 → ×1.4），单位 ms
+  // 保留精心设计的原始开场节奏；提速仅来自加载链路优化，不改变动画时间轴。
   const SPD=1.4;
-  const T={montageEnd:2300,clipStart:650,clipEnd:2300,holdEnd:2460,flashAt:2420,logoIn:2660,logoEnd:3480,langAt:3660};
+  const T={montageEnd:2300,clipStart:650,clipEnd:2300,holdEnd:2460,logoIn:2660,logoEnd:3480,langAt:3660};
   function buildCuts(){const cuts=[];let t=0,gap=200,i=0;while(t<T.montageEnd){cuts.push({t,img:i%frames.length});t+=gap;gap=Math.max(55,gap*0.9);i++;}return cuts;}
   const CUTS=buildCuts();
   let start=0,raf=0,curImg=-1,curClipT=0,langShown=false,revealed=false;
@@ -1035,12 +1113,10 @@ const WORKS=[
     const cp=clamp01(p),e=ease(cp),eoc=1-Math.pow(1-cp,3);
     logoWrap.style.opacity=Math.min(1,cp*10).toFixed(3);
     logoWrap.style.transform='translate(-50%,-50%) scale('+(1.03-0.03*e).toFixed(3)+')';
-    const glow=(1-e)*10+Math.sin(cp*Math.PI)*22;
-    logoWrap.style.filter='drop-shadow(0 0 '+glow.toFixed(1)+'px rgba(255,255,255,.8))';
     const inset=(1-eoc)*50;                // 从中线 50%→0 向左右平移揭示（原尺寸，不缩放）
     logoSplit.style.clipPath='inset(0 '+inset.toFixed(2)+'% 0 '+inset.toFixed(2)+'%)';
   }
-  function showLang(){if(langShown)return;langShown=true;plLang.classList.add('show');}
+  function showLang(){if(langShown)return;langShown=true;plLang.classList.add('show');window.dispatchEvent(new Event('intro:language-ready'));}
 
   // 语言选择 → applyLang + 解锁滚动 + 红幕上滑离场
   function reveal(lang){
@@ -1066,7 +1142,6 @@ const WORKS=[
     else showImg(frames.length-1);                 // 末帧定格（中国外代）
     curClipT=clamp01((t-T.clipStart)/(T.clipEnd-T.clipStart));
     montage.style.clipPath=clipAt(curClipT);
-    if(t>=T.logoIn){const gp=clamp01((t-T.logoIn)/(T.logoEnd-T.logoIn));flash.style.opacity=(Math.sin(gp*Math.PI)*0.6).toFixed(3);}  // logo 揭幕时柔和居中辉光（非满屏扫光）
     if(t>=T.holdEnd)montage.style.opacity=(1-clamp01((t-T.holdEnd)/180)).toFixed(3);
     if(t>=T.logoIn)setLogo((t-T.logoIn)/(T.logoEnd-T.logoIn));
     if(t>=T.langAt)showLang();
@@ -1091,6 +1166,7 @@ const WORKS=[
 /* ════════ FILTERS · WORK INDEX · VIDEO · ACCORDION ════════ */
 (function(){
   const filters=document.getElementById('filters'),list=document.getElementById('workList'),countEl=document.getElementById('workCount');
+  countEl.textContent='['+WORKS.length+']';
   CATS.forEach(c=>{
     const b=document.createElement('button');
     b.className='chip'+(c.k==='ALL'?' active':'');
@@ -1102,21 +1178,21 @@ const WORKS=[
     filters.appendChild(b);
   });
 
-  WORKS.forEach(w=>{
+  WORKS.forEach((w,index)=>{
     const item=document.createElement('div');
     item.className='wi';item.dataset.cat=w.cat;item.id='wk_'+w.n;
     const heroSrc=IMG+w.hero;
     const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/"/g,'&quot;');
     const da=en=>en?` data-en="${esc(en)}"`:'';
-    const gal=w.g.map(([src,lab,lab_en])=>`<div class="g"><img src="${IMG+src}" alt="" loading="lazy"><span class="gl"${da(lab_en)}>${lab}</span></div>`).join('');
+    const gal=w.g.map(([src,lab,lab_en])=>`<div class="g"><img data-src="${IMG+src}" alt="" decoding="async"><span class="gl"${da(lab_en)}>${lab}</span></div>`).join('');
     const vcls=w.vertical?' wdet__media--v':'';
     const media=w.vid
-      ? `<div class="wdet__media${vcls}" data-vid="${VID+w.vid}"${w.vertical?' data-vertical="1"':''}><video preload="none" playsinline poster="${heroSrc}"></video><div class="ply"><span><svg viewBox="0 0 12 12" fill="currentColor"><path d="M2 1l8 5-8 5z"/></svg><span data-en="Play film">播放影片</span></span></div></div>`
-      : `<div class="wdet__media${vcls}"><img src="${heroSrc}" alt="${w.title}" loading="lazy"${w.heroPos?` style="object-position:${w.heroPos}"`:''}></div>`;
+      ? `<div class="wdet__media${vcls}" data-vid="${VID+w.vid}"${w.vertical?' data-vertical="1"':''}><video preload="none" playsinline data-poster="${heroSrc}"></video><div class="ply"><span><svg viewBox="0 0 12 12" fill="currentColor"><path d="M2 1l8 5-8 5z"/></svg><span data-en="Play film">播放影片</span></span></div></div>`
+      : `<div class="wdet__media${vcls}"><img data-src="${heroSrc}" alt="${w.title}" decoding="async"${w.heroPos?` style="object-position:${w.heroPos}"`:''}></div>`;
     const svcRow=w.svc?`<div class="wdet__rk"><span class="k">Service</span><span${da(w.svc_en)}>${w.svc}</span></div>`:'';
     item.innerHTML=`
       <button class="wrow" data-img="${heroSrc}" aria-expanded="false">
-        <span class="wrow__n">${String(w.n).padStart(2,'0')}</span>
+        <span class="wrow__n">${String(index+1).padStart(2,'0')}</span>
         <span class="wrow__main"><span class="wrow__t"${da(w.title_en)}>${w.title}</span><span class="wrow__cat">${w.cat}</span></span>
         <span class="wrow__r"><span class="wrow__meta"${da(w.client_en)}>${w.client}</span><span class="wrow__pl"></span></span>
       </button>
@@ -1126,15 +1202,28 @@ const WORKS=[
           <p class="wdet__desc"${da(w.desc_en)}>${w.desc}</p>
           <div class="wdet__rows">
             <div class="wdet__rk"><span class="k">Index</span><span${da(w.eyebrow_en)}>${w.eyebrow}</span></div>
-            <div class="wdet__rk"><span class="k">Client</span><span${da(w.client_en)}>${w.client}</span></div>
+            <div class="wdet__rk"><span class="k">${w.creditLabel||'Client'}</span><span${da(w.client_en)}>${w.client}</span></div>
             <div class="wdet__rk"><span class="k">Type</span><span${da(w.type_en)}>${w.type}</span></div>
             ${svcRow}
+            ${w.sourceUrl ? `<div class="wdet__rk"><span class="k">Weibo</span><a href="${esc(w.sourceUrl)}" target="_blank" rel="noopener noreferrer" data-en="View on Weibo">查看作品微博</a></div>` : ''}
           </div>
         </div>
         <div class="wdet__g${w.grid9?' g9':''}">${gal}</div>
       </div></div></div>`;
     list.appendChild(item);
   });
+
+  // 折叠项目中的封面、海报和图集只在客户真正展开该项目时下载，避免开场期间抢带宽。
+  function hydrateWorkMedia(item){
+    if(!item||item.dataset.mediaReady)return;
+    item.dataset.mediaReady='1';
+    item.querySelectorAll('img[data-src]').forEach(img=>{
+      img.src=img.dataset.src;img.removeAttribute('data-src');
+    });
+    item.querySelectorAll('video[data-poster]').forEach(video=>{
+      video.poster=video.dataset.poster;video.removeAttribute('data-poster');
+    });
+  }
 
   // 暂停所有作品视频（可排除一个），避免多个视频同时播放
   function stopWorkVideos(except){
@@ -1196,6 +1285,7 @@ const WORKS=[
     list.querySelectorAll('.wi.open').forEach(o=>{o.classList.remove('open');o.querySelector('.wrow').setAttribute('aria-expanded','false');});
     stopWorkVideos(null);
     if(!wasOpen){
+      hydrateWorkMedia(item);
       item.classList.add('open');row.setAttribute('aria-expanded','true');
       // 展开后自动播放（优先有声；浏览器策略拦截时回退静音）
       const m=item.querySelector('.wdet__media[data-vid]');
@@ -1349,6 +1439,7 @@ const WORKS=[
     });
     if(typeof window.__reelRelang==='function')window.__reelRelang();  // 刷新放映标题
     syncToggles(lang);
+    window.dispatchEvent(new Event('site:language-changed'));
     try{localStorage.setItem('bys_lang',lang);}catch(e){}
   };
   // 顶栏 / 移动端的「中 · EN」切换（开场选择器由 PRELOADER 单独处理揭幕）
@@ -1369,7 +1460,10 @@ const WORKS=[
     'media/works/rbxz_h.jpg'
   ];
   const img=document.getElementById('heroImg');
-  if(img)img.src=pool[Math.floor(Math.random()*pool.length)];
+  if(img){
+    const src=pool[Math.floor(Math.random()*pool.length)];
+    window.addEventListener('intro:language-ready',()=>{img.src=src;},{once:true});
+  }
 })();
 
 /* ════════ 项目精选 · 移动端滚动预览舞台 ════════ */
@@ -1387,6 +1481,11 @@ const WORKS=[
 
   const rows=()=>[...list.querySelectorAll('.wi:not(.hide)')];
   const read=(item,selector)=>{const el=item.querySelector(selector);return el?el.textContent.trim():'';};
+  function updateCaption(item){
+    idxEl.textContent=read(item,'.wrow__n');
+    ttlEl.textContent=read(item,'.wrow__t');
+    metaEl.textContent=read(item,'.wrow__meta');
+  }
   function setActive(item){
     if(!item)return;
     if(item.id!==curId){
@@ -1397,9 +1496,7 @@ const WORKS=[
       layers[next].classList.add('on');
       layers[front].classList.remove('on');
       front=next;
-      idxEl.textContent=read(item,'.wrow__n');
-      ttlEl.textContent=read(item,'.wrow__t');
-      metaEl.textContent=read(item,'.wrow__meta');
+      updateCaption(item);
     }
     rows().forEach(row=>row.classList.toggle('cur',row===item));
   }
@@ -1435,6 +1532,9 @@ const WORKS=[
     rows().forEach(row=>row.classList.remove('cur'));
   }
   const sync=()=>mq.matches?enable():disable();
+  addEventListener('site:language-changed',()=>{
+    if(enabled&&curId)updateCaption(document.getElementById(curId));
+  });
 
   stage.addEventListener('click',()=>{
     const item=list.querySelector('.wi.cur')||rows()[0];
