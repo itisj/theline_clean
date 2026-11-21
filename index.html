@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>白猿山 · 商业视觉服务商 | Baiyuanshan — Commercial Visual Studio</title>
-<meta name="description" content="白猿山（Baiyuanshan）—— 立足国家级影视工业、深入 AI 视觉前沿的商业视觉服务商。IP内容孵化 · 影视级视觉 · AIGC赋能。A commercial visual studio rooted in national-level film production and the frontier of AI-driven content.">
+<meta name="description" content="白猿山（Baiyuanshan）—— 立足国家级影视工业、深入 AI 视觉前沿的商业视觉服务商。MCN 达人孵化、影视级内容制作与 AI 应用实训。Creator management, film production and hands-on AI training.">
 <meta name="theme-color" content="#ff391e">
 <link rel="canonical" href="https://baiyuanshan.com/">
 <link rel="icon" type="image/png" href="media/logo_mark.png?v=3">
@@ -91,7 +91,7 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
 
 /* ════════ HEADER ════════ */
 .header{position:fixed;left:0;right:0;top:0;z-index:600;color:var(--white);transition:color .6s var(--ease),transform .5s var(--ease),background .6s var(--ease);transform:translateY(-110%);background:rgba(13,11,9,.55);-webkit-backdrop-filter:saturate(1.4) blur(16px);backdrop-filter:saturate(1.4) blur(16px)}
-.header.shown{transform:none}
+.header.shown,.header:has(:focus-visible){transform:none}
 .header.on-dark{color:var(--white);background:rgba(13,11,9,.55)}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.header{background:rgba(13,11,9,.82)}.header.on-dark{background:rgba(13,11,9,.82)}}
 .header .bar{display:grid;grid-template-columns:1fr;align-items:center;gap:8px;padding:13px var(--pad) 12px;position:relative}
@@ -185,21 +185,85 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
 .intro .val b{color:var(--red);font-weight:600}
 .intro .sub{grid-column:1/span 5;margin-top:18px;color:var(--muted);font-size:15px;line-height:1.5}
 
-/* ════════ CAPABILITIES (三大部门) ════════ */
-.caps-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.cap{background:var(--grey);padding:34px 16px 30px;display:flex;flex-direction:column;gap:14px;position:relative;transition:background .5s var(--ease),color .5s var(--ease)}
-.cap .cn{font-family:var(--mono);font-size:11px;color:var(--red)}
-.cap .ce{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.cap .cz{font-size:clamp(26px,3.2vw,38px);font-weight:600;letter-spacing:-.02em;line-height:1;margin-top:2px}
-.cap .ct{color:var(--red);font-size:14px;font-weight:500}
-.cap .cd{color:var(--muted);font-size:15px;line-height:1.5;flex:1}
-.cap .ci{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-.cap .ci span{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-radius:30px;padding:4px 11px}
-.cap:hover{background:var(--black);color:var(--white)}
-.cap:hover .cd,.cap:hover .ce{color:rgba(248,248,248,.7)}
-.cap:hover .ci span{border-color:rgba(248,248,248,.3)}
-.caps-foot{margin-top:26px;font-size:clamp(16px,1.8vw,22px);font-weight:500;letter-spacing:-.01em;line-height:1.35}
-.caps-foot b{color:var(--red)}
+/* ════════ CAPABILITIES (三大业务中心) ════════ */
+#centers,#center-flow,.loop-row,.wi,#studio,#work,#contact{scroll-margin-top:100px}
+.offer-page{padding:clamp(52px,6vw,96px) var(--pad);background:#f2f0eb;color:#151714}
+.offer-page--flow{background:#181b1a;color:#f7f6f0}
+.offer-head{display:flex;align-items:baseline;justify-content:space-between;gap:15px;padding-bottom:12px;border-bottom:1px solid currentColor}
+.offer-kicker,.offer-pager{font:700 12px/1.4 var(--mono);letter-spacing:.05em}
+.offer-kicker{display:flex;align-items:center;gap:9px}
+.offer-kicker::before{content:"";width:9px;height:9px;background:var(--red)}
+.offer-pager{white-space:nowrap;opacity:.74}
+.offer-intro{margin:24px 0 26px}
+.offer-intro h2{font-size:clamp(32px,4.35vw,70px);line-height:1.14;letter-spacing:-.045em;text-wrap:balance}
+.offer-intro p{font-size:clamp(15px,1.25vw,20px);line-height:1.6;margin:9px 0 0;color:#454843}
+.offer-page--flow .offer-intro p{color:#cbcfc8}
+.offer-grid{display:grid;gap:16px}
+.offer-card,.loop-row{--accent:#a44328;--wash:#f1dcd0;--night:#4c3026;--glow:#ffac8e}
+.service-film{--accent:#395b80;--wash:#dae5ef;--night:#2a3948;--glow:#a8c8f0}
+.service-ai{--accent:#386451;--wash:#dce8db;--night:#293d34;--glow:#a7d9bb}
+.offer-card{min-width:0;display:flex;flex-direction:column;background:#fffefa;border-top:4px solid var(--accent)}
+.offer-card__head{padding:18px 20px 17px;background:var(--wash)}
+.offer-name{font-size:13px;font-weight:700;line-height:1.4;color:var(--accent)}
+.offer-card h3{font-size:clamp(23px,2.05vw,34px);line-height:1.21;letter-spacing:-.045em;margin:7px 0 0;text-wrap:balance}
+.case-link,.case-link figure{display:block;margin:0;min-width:0}
+.offer-image{display:block;aspect-ratio:1.98;overflow:hidden;background:#303631}
+.offer-image img,.proof-photo img{width:100%;height:100%;object-fit:cover}
+.case-link figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.case-link figcaption span:first-child{text-decoration:underline;text-underline-offset:.26em}
+.case-link:hover figcaption{color:var(--ink)}
+.offer-card__body{display:flex;flex-direction:column;gap:13px;padding:13px 20px 16px}
+.flow-entry{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;margin-top:auto;min-height:36px;color:var(--accent);font-size:14px;font-weight:700}
+.flow-entry:hover span:first-child{text-decoration:underline;text-underline-offset:.26em}
+.offer-credit{color:#565b55;font-size:12px;line-height:1.45;padding:9px 20px 0}
+.offer-card p{font-size:clamp(15px,1.15vw,18px);line-height:1.6;margin:0}
+.offer-next{display:flex;justify-content:flex-end;margin:18px 0 0;font-size:15px;font-weight:600}
+.offer-next a,#contact a[href^="tel:"]{display:inline-flex;align-items:center;min-height:40px;text-decoration:underline;text-underline-offset:.25em}
+#centers a:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+.flow-layout{display:grid;gap:22px}
+.loop-list{display:grid;gap:14px}
+.loop-row{min-width:0;display:grid;gap:9px;padding:15px 17px 13px;background:#202523;border-left:3px solid var(--glow)}
+.loop-row h3{font-size:15px;line-height:1.25;letter-spacing:0;color:var(--glow)}
+.loop-row:target{outline:1px solid var(--glow);outline-offset:2px}
+.loop-stops{display:grid;grid-template-columns:1fr;gap:20px;list-style:none;margin:0;padding:0}
+.loop-stops li{position:relative;padding:9px 11px;background:var(--night);line-height:1.45;min-width:0}
+.loop-stops b,.loop-stops small{display:block}
+.loop-stops b{font-size:16px;line-height:1.35}
+.loop-stops small{font-size:13px;color:#edf1e9;margin-top:3px}
+.loop-stops li+li::before{content:"↓";position:absolute;left:12px;top:-21px;font:15px/20px var(--mono);color:var(--glow)}
+.loop-back{position:relative;display:flex;align-items:center;justify-content:center;min-height:20px;margin:0 6px;color:var(--glow);text-align:center;font-size:12.5px;line-height:1.45}
+.loop-back::before{content:"";position:absolute;inset:-8px 0 50%;border:1px solid currentColor;border-top:0}
+.loop-back::after{content:"";position:absolute;left:-3px;top:-8px;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-bottom:5px solid currentColor}
+.loop-back span{position:relative;background:#202523;padding:0 9px;max-width:88%}
+.proof-card{min-width:0;background:#eee9df;color:#181b1a;padding:17px;display:flex;flex-direction:column;gap:10px}
+.proof-card h3{font-size:clamp(20px,1.75vw,28px);line-height:1.2;margin:0}
+.proof-card p{font-size:14px;line-height:1.55;margin:0}
+.proof-card figure{margin:0}
+.proof-photo{display:block;aspect-ratio:3.05;overflow:hidden}
+.proof-card figcaption{font-size:12px;line-height:1.45;padding-top:5px}
+.offer-page--flow .offer-next{color:#f7f6f0}
+@media(min-width:680px){
+ .offer-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.3vw,24px)}
+ .offer-card{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0}
+ .offer-card__head{min-height:100px}
+ .loop-stops{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+ .loop-stops li+li::before{content:"→";left:-19px;top:50%;transform:translateY(-50%)}
+}
+@media(min-width:960px){
+ .flow-layout{grid-template-columns:minmax(0,2.55fr) minmax(0,1fr)}
+ .proof-card{justify-content:space-between}
+}
+@media(max-width:679px){
+ .loop-row{grid-template-columns:14px minmax(0,1fr);padding-left:12px}
+ .loop-row h3{grid-column:1/-1}
+ .loop-stops{grid-column:2}
+ .loop-back{position:static;grid-column:2;text-align:left;justify-content:flex-start;margin:0}
+ .loop-row{position:relative}
+ .loop-back::before{inset:53px auto 20px 11px;width:15px;border:0;border-left:1px solid currentColor;border-top:1px solid currentColor;border-bottom:1px solid currentColor}
+ .loop-back::after{left:22px;top:50px;border:0;border-top:3.5px solid transparent;border-bottom:3.5px solid transparent;border-left:5px solid currentColor}
+ .loop-back span{padding:0;max-width:100%}
+ .proof-photo{aspect-ratio:2.8}
+}
 
 /* ════════ STUDIO (team — circular, floating) ════════ */
 .studio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 8px}
@@ -342,7 +406,6 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
   .h-loc{display:none}
   .studio-grid{grid-template-columns:repeat(4,1fr)}
   .stars-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:28px 12px}
-  .caps-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .logo-wall{grid-template-columns:repeat(3,1fr)}
   .steps{grid-template-columns:repeat(3,1fr)}
   .wrow__meta{display:block}
@@ -366,11 +429,11 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
 @media(min-width:1024px){
   .grid{grid-template-columns:repeat(9,minmax(0,1fr));padding:0 var(--pad);gap:8px}
   .sec{padding:104px 0}
-  .header .bar{grid-template-columns:repeat(9,1fr);align-items:center;padding:15px var(--pad) 13px}
-  .h-logo{grid-column:1/span 3}
+  .header .bar{grid-template-columns:auto minmax(0,1fr) auto;align-items:center;padding:15px var(--pad) 13px}
+  .h-logo{grid-column:1}
   .h-status{display:flex;grid-column:4/span 1}
-  .h-loc{grid-column:5/span 1}
-  .nav{display:flex;grid-column:6/span 4}
+  .h-loc{grid-column:2;justify-self:center}
+  .nav{display:flex;grid-column:3}
   .hero__bot{padding:0 var(--pad) 22px}
   .sec-head .lab{grid-column:1/span 9}
   .sec-head .ttl{grid-column:1/span 9}
@@ -398,6 +461,7 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
 @media(min-width:1024px) and (max-width:1099px){.h-loc{display:none}}
 @media(min-width:1100px){.h-loc{display:block}}
 @media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
   *{animation-duration:.001ms!important;transition-duration:.001ms!important}
   .hero__fig img{transform:none!important;opacity:1!important}
   .acetate{opacity:.2!important}
@@ -444,7 +508,23 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
 .langsw button,.h-lang-m button{font-family:var(--mono);font-size:14px;font-weight:600;letter-spacing:.025em;color:inherit;opacity:.58;transition:opacity .3s var(--ease)}
 .langsw button:hover,.h-lang-m button:hover{opacity:.85}
 .langsw button.on,.h-lang-m button.on{opacity:1;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-.h-lang-m{position:absolute;top:18px;right:var(--pad);z-index:3;display:inline-flex;gap:11px}
+.h-lang-m{display:inline-flex;align-items:center;gap:11px}
+@media(max-width:1023px){
+  .header .bar{grid-template-columns:minmax(0,1fr) auto;gap:0 14px;padding-top:7px;padding-bottom:0}
+  .h-logo{grid-area:1/1;justify-self:start}
+  .h-lang-m{grid-area:1/2}
+  .h-lang-m button{min-height:38px}
+  .nav{display:flex;grid-area:2/1/3/-1;justify-self:stretch;justify-content:space-between;gap:4px}
+  .nav a{position:relative;min-height:40px;font-family:var(--sans);font-size:14px}
+  .nav a:not(:last-child){margin-right:0}
+  .nav .langsw,.nav .dot,.nav a:not(:last-child)::after{display:none}
+  .nav a.active::before{content:"";position:absolute;left:0;right:0;bottom:4px;height:2px;background:var(--red)}
+}
+@media(min-width:720px) and (max-width:1023px){
+  .header .bar{grid-template-columns:auto minmax(0,1fr) auto;gap:18px;padding-bottom:7px}
+  .nav{grid-area:1/2;justify-self:end;gap:14px}
+  .h-lang-m{grid-area:1/3}
+}
 @media(min-width:1024px){.h-lang-m{display:none}}
 
 /* ════════ I18N · 中文模式下隐藏纯英文专用元素（预留） ════════ */
@@ -462,11 +542,6 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
 .langsw button,.h-lang-m button{font-size:15px}
 .sr__cat{font-size:clamp(12px,.95vw,14px);color:rgba(248,248,248,.84)}
 .sr__meta{font-size:clamp(12.5px,.95vw,14px);line-height:1.55;color:rgba(248,248,248,.88)}
-.cap .cn,.cap .ce{font-size:12.5px}
-.cap .ct{font-size:15px}
-.cap .cd{font-size:16px;line-height:1.55;font-weight:500;color:rgba(11,11,11,.74)}
-.cap .ci span{font-size:12.5px}
-.cap:hover .cd{color:rgba(248,248,248,.8)}
 .intro .val{font-size:clamp(18px,1.8vw,24px)}
 .intro .sub{font-size:16px;line-height:1.6;font-weight:500;color:rgba(11,11,11,.68)}
 .person .num{font-size:11px}
@@ -580,7 +655,8 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
     </a>
     <span class="h-loc">湖南长沙 · Changsha</span>
     <nav class="nav">
-      <a href="#top" class="active"><span class="dot"></span><span data-en="Showreel">作品</span></a>
+      <a href="#top" class="active" aria-current="location"><span class="dot"></span><span data-en="Showreel">作品</span></a>
+      <a href="#centers"><span class="dot"></span><span data-en="Services">业务中心</span></a>
       <a href="#studio"><span class="dot"></span><span data-en="Team">团队</span></a>
       <a href="#work"><span class="dot"></span><span data-en="Work">项目</span></a>
       <a href="#contact"><span class="dot"></span><span data-en="Contact">联系</span></a>
@@ -642,39 +718,111 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
     </div>
   </section>
 
-  <!-- ════════ CAPABILITIES (三大部门) ════════ -->
-  <section class="sec sec--grey">
-    <div class="grid sec-head rv">
-      <div class="lab mono-up">What We Do <span class="n">[03]</span></div>
-      <h2 class="ttl" data-en="Three Departments, One Studio">三大部门 一体协同</h2>
-    </div>
-    <div class="gutters">
-      <div class="caps-grid rv">
-        <article class="cap">
-          <span class="cn">01</span><span class="ce">Development</span>
-          <span class="cz" data-en="IP Development">IP内容孵化</span>
-          <span class="ct" data-en="— Original series —">— 原创系列内容 —</span>
-          <span class="cd" data-en="We develop original ideas into series, from character concepts and story outlines to individual scripts.">从人物设定、故事大纲到分集脚本，把原创构想开发成系列内容。</span>
-          <span class="ci"><span data-en="IP strategy">IP策划</span><span data-en="Story development">故事开发</span></span>
-        </article>
-        <article class="cap">
-          <span class="cn">02</span><span class="ce">Production</span>
-          <span class="cz" data-en="Cinematic Visuals">影视级视觉</span>
-          <span class="ct" data-en="— Film-grade quality —">— 影视级品质 —</span>
-          <span class="cd" data-en="We shoot and finish commercials, brand films and corporate films, from live action to final delivery.">从实拍到后期，完成宣传片、广告片和品牌形象片的制作与交付。</span>
-          <span class="ci"><span data-en="Live action">实拍拍摄</span><span data-en="Post &amp; compositing">后期合成</span></span>
-        </article>
-        <article class="cap">
-          <span class="cn">03</span><span class="ce">Applied AI</span>
-          <span class="cz" data-en="AIGC Enablement">AIGC赋能</span>
-          <span class="ct" data-en="— Production and training —">— 创作与培训 —</span>
-          <span class="cd" data-en="We combine AI imagery with live action and train teams to use these techniques in their own productions.">将 AI 影像与实拍素材合成，通过企业内训和项目实操，帮助团队掌握制作方法。</span>
-          <span class="ci"><span data-en="AI imagery">AI影像</span><span data-en="Team training">团队培训</span></span>
-        </article>
+  <!-- ════════ CAPABILITIES (三大业务中心) ════════ -->
+  <div id="centers">
+    <section class="offer-page" aria-labelledby="centers-title">
+      <div class="offer-head"><div class="offer-kicker" data-en="Services">服务方向</div><span class="offer-pager">01 / 02</span></div>
+      <div class="offer-intro">
+        <h2 id="centers-title" data-en="Our Three Business Centers">三大业务中心</h2>
+        <p data-en="An account ready for brand partnerships, a film worthy of your name, or a team that can produce its own work. Start with the result you need.">一个能持续合作的账号，一部撑得起品牌的作品，或一支能独立出片的团队。从你最想要的结果开始。</p>
       </div>
-      <p class="caps-foot rv" data-en="From <b>outsourcing content</b> to <b>producing it sustainably in-house</b> — that is where long-term competitiveness lives.">从「外包式做内容」升级为<b>「内部可持续生产内容」</b>——这才是长期竞争力。</p>
-    </div>
-  </section>
+      <div class="offer-grid">
+          <article class="offer-card service-mcn">
+            <header class="offer-card__head">
+              <div class="offer-name" data-en="MCN · Talent &amp; brand partnerships">MCN · 达人运营与品牌合作</div>
+              <h3 data-en="Creator Management">IP 内容孵化中心</h3>
+            </header>
+            <a class="case-link" href="#wk_2" data-work><figure>
+              <span class="offer-image"><img src="media/works/dongao_g3.jpg" alt="" loading="lazy" decoding="async"></span>
+              <figcaption class="offer-credit"><span data-en="Beijing 2022 · Beginning of Spring, from 24 Solar Terms Countdown">北京冬奥会开幕式 ·《二十四节气倒计时》立春</span><span aria-hidden="true">→</span></figcaption>
+            </figure></a>
+            <div class="offer-card__body">
+              <p data-en="Turn a founder’s, expert’s or creator’s experience into a recurring series. Give brands a clear view of whom you reach and which products fit.">从创始人、专家和达人的真实经历里找选题，做成能持续更新的栏目。让品牌看见你影响谁、适合推荐什么。</p>
+              <a class="flow-entry" href="#flow-mcn"><span data-en="Explore the creator program">查看孵化流程</span><span aria-hidden="true">↓</span></a>
+            </div>
+          </article>
+          <article class="offer-card service-film">
+            <header class="offer-card__head">
+              <div class="offer-name" data-en="Drama · Advertising · Documentary">剧情 · 商业 · 纪实</div>
+              <h3 data-en="Film &amp; TV Production">影视级内容制作中心</h3>
+            </header>
+            <a class="case-link" href="#wk_71" data-work><figure>
+              <span class="offer-image"><img src="media/works/red_army_snow.jpg" alt="" style="object-position:center 42%" loading="lazy" decoding="async"></span>
+              <figcaption class="offer-credit"><span data-en="The Silent Red Army Soldier · Historical short drama">历史微短剧 ·《哑巴红军》雪山行军剧照</span><span aria-hidden="true">→</span></figcaption>
+            </figure></a>
+            <div class="offer-card__body">
+              <p data-en="For features, TV, short dramas, ads, promotional films and documentaries, we start with the scene the audience should remember, then choose live action, AI or a mix.">从电影、电视剧、微短剧，到商业广告、宣传片和纪录片，先定观众要记住的那一幕，再选实拍、AI 生成或两者合成。</p>
+              <a class="flow-entry" href="#flow-film"><span data-en="Explore film production">查看制作流程</span><span aria-hidden="true">↓</span></a>
+            </div>
+          </article>
+          <article class="offer-card service-ai">
+            <header class="offer-card__head">
+              <div class="offer-name" data-en="In-house training · Campus partnerships">企业内训 · 校企共创</div>
+              <h3 data-en="Applied AI Training">AI 应用与实训中心</h3>
+            </header>
+            <a class="case-link" href="#wk_72" data-work><figure>
+              <span class="offer-image"><img src="media/train_3.jpeg" alt="" style="object-position:center 38%" loading="lazy" decoding="async"></span>
+              <figcaption class="offer-credit"><span data-en="Applied AI Training · Workshop group photo">AIGC 赋能培训 · 项目合影</span><span aria-hidden="true">→</span></figcaption>
+            </figure></a>
+            <div class="offer-card__body">
+              <p data-en="Bring your product and source material. Storyboard, generate and review a pilot together, then keep a workflow your team can repeat with another product.">带上你们的产品和素材，现场拆分镜、做样片、逐镜审看。把制作步骤留下来，换一个产品，团队也能照着做。</p>
+              <a class="flow-entry" href="#flow-ai"><span data-en="Explore team training">查看实训流程</span><span aria-hidden="true">↓</span></a>
+            </div>
+          </article>
+      </div>
+    </section>
+    <section class="offer-page offer-page--flow" id="center-flow" aria-labelledby="flow-title">
+      <div class="offer-head"><div class="offer-kicker" data-en="Process &amp; Delivery">合作与交付</div><span class="offer-pager">02 / 02</span></div>
+      <div class="offer-intro">
+        <h2 id="flow-title" data-en="Our Three Business Centers">三大业务中心</h2>
+        <p data-en="Agree on a tangible outcome first. Then use brand inquiries, screening notes or the team’s independent work to decide what comes next.">先约定能验收的成果，再用合作询单、审片意见或团队复做的结果，决定下一轮做什么。</p>
+      </div>
+      <div class="flow-layout">
+        <div class="loop-list">
+            <article class="loop-row service-mcn" id="flow-mcn" tabindex="-1" aria-labelledby="flow-mcn-title">
+              <h3 id="flow-mcn-title" data-en="Creator growth &amp; brand partnerships">IP 孵化与品牌合作</h3>
+              <ol class="loop-stops">
+                <li><b data-en="Define the niche">定人设与受众</b><small data-en="Interview the creator and build a topic bank">访谈整理选题库</small></li>
+                <li><b data-en="Publish a series">做栏目、发内容</b><small data-en="Shoot, edit, distribute and engage">拍剪分发，跟进粉丝互动</small></li>
+                <li><b data-en="Deliver a campaign">对接品牌商单</b><small data-en="Match the audience to a brand and produce sponsored content">按受众匹配品牌，交付合作内容</small></li>
+              </ol>
+              <p class="loop-back"><span data-en="Review saves, comments and inquiries to select follow-up topics">复盘收藏、评论与合作询单，决定哪些选题值得加拍</span></p>
+            </article>
+            <article class="loop-row service-film" id="flow-film" tabindex="-1" aria-labelledby="flow-film-title">
+              <h3 id="flow-film-title" data-en="Film production &amp; delivery">影视创作与成片交付</h3>
+              <ol class="loop-stops">
+                <li><b data-en="Find the key scene">锁定关键一幕</b><small data-en="Agree on audience, setting and message">明确观众、场景与核心信息</small></li>
+                <li><b data-en="Test the approach">用样片定调</b><small data-en="Agree on a storyboard or a test shot">用分镜或测试镜头确认拍法</small></li>
+                <li><b data-en="Deliver the final cuts">交付上映或投放版本</b><small data-en="Master the film in the agreed lengths and formats">按约定完成成片、时长与画幅</small></li>
+              </ol>
+              <p class="loop-back"><span data-en="Use review notes to refine individual shots and channel edits">按审片意见改镜头，针对不同渠道调整剪辑</span></p>
+            </article>
+            <article class="loop-row service-ai" id="flow-ai" tabindex="-1" aria-labelledby="flow-ai-title">
+              <h3 id="flow-ai-title" data-en="AI training &amp; independent production">AI 实训与团队复用</h3>
+              <ol class="loop-stops">
+                <li><b data-en="Bring a live brief">带真实任务入课</b><small data-en="Choose a current product or project">选一个正在推进的产品或项目</small></li>
+                <li><b data-en="Make a pilot together">用自己的素材做样片</b><small data-en="The team creates and reviews each shot">团队动手，导师逐镜反馈</small></li>
+                <li><b data-en="Take home a pilot and template">带走样片和模板</b><small data-en="Keep the storyboard, assets and workflow">留存分镜、素材与操作步骤</small></li>
+              </ol>
+              <p class="loop-back"><span data-en="Repeat with new assets and add the tricky steps to the template">让团队换素材再做一遍，把卡住的步骤补进模板</span></p>
+            </article>
+        </div>
+        <aside class="proof-card" aria-labelledby="proof-title">
+          <h3 id="proof-title" data-en="Brand films &amp; team training">品牌影像与团队实训</h3>
+          <p data-en="Our BMW documentary follows the design and production of an electric car. At Latiao Prince, the team used its own materials to practise AI filmmaking.">为宝马拍纪录片，走进电动车的设计与生产现场。为麻辣王子做 AI 内训，让团队用自己的素材练习制作。</p>
+          <a class="case-link" href="#wk_20" data-work><figure>
+            <span class="proof-photo"><img src="media/works/bmw_i_title.webp" alt="" loading="lazy" decoding="async"></span>
+            <figcaption><span data-en="BMW i · Beyond Electric · Brand documentary">宝马《BMW i 超越电动》· 品牌纪录片</span><span aria-hidden="true">→</span></figcaption>
+          </figure></a>
+          <a class="case-link" href="#wk_72" data-work><figure>
+            <span class="proof-photo"><img src="media/works/mala_wangzi_aigc_training.jpg" alt="" style="object-position:center 49%" loading="lazy" decoding="async"></span>
+            <figcaption><span data-en="Latiao Prince · In-house AI workshop">麻辣王子 · AI 内训现场</span><span aria-hidden="true">→</span></figcaption>
+          </figure></a>
+        </aside>
+      </div>
+      <div class="offer-next"><a href="#contact" data-en="Discuss your project →">聊聊你的项目 →</a></div>
+    </section>
+  </div>
 
   <!-- ════════ STUDIO (Team) ════════ -->
   <section class="sec sec--dark" id="studio">
@@ -811,8 +959,8 @@ h1,h2,h3{margin:0;font-weight:600;line-height:.92;letter-spacing:-.025em}
     </div>
     <div class="fcol fcol--1 rv"><div class="l">Location</div><div class="v" data-en="Changsha, China">湖南长沙</div></div>
     <div class="fcol fcol--2 rv"><div class="l">Company</div><div class="v" data-en="Changsha Baiyuanshan<br>Culture &amp; Technology Co., Ltd.">长沙白猿山<br>文化科技有限责任公司</div></div>
-    <div class="fcol fcol--3 rv"><div class="l">Scope</div><div class="v" data-en="IP Development · Cinematic Visuals · AIGC Enablement">IP内容孵化 · 影视级视觉 · AIGC赋能</div></div>
-    <div class="fcol fcol--4 rv"><div class="l">Contact</div><div class="v" data-en="Li Jie · +86 187 1118 8024">李杰 · +86 187 1118 8024</div></div>
+    <div class="fcol fcol--3 rv"><div class="l">Scope</div><div class="v" data-en="Creator Management · Film &amp; TV Production · Applied AI Training">MCN 达人孵化 · 影视级内容制作 · AI 应用实训</div></div>
+    <div class="fcol fcol--4 rv"><div class="l">Contact</div><div class="v"><a href="tel:+8618711188024" data-en="Li Jie · +86 187 1118 8024">李杰 · +86 187 1118 8024</a></div></div>
     <div class="fbot rv"><span>© 2026 白猿山文化科技 · BY YOUR SIDE VISION</span><span class="credits"></div>
   </div>
 </footer>
@@ -977,14 +1125,14 @@ const CATS=[
   {k:"B",label:"B",zh:"品牌 TVC & 广告片",en:"Brand TVC & Commercials"},
   {k:"C",label:"C",zh:"金融 · 机构内容",en:"Finance · Institutional"},
   {k:"D",label:"D",zh:"人物肖像 & 名人纪实",en:"Portraits & Celebrity"},
-  {k:"E",label:"E",zh:"微电影 & 纪录影像",en:"Short Films & Documentary"},
+  {k:"E",label:"E",zh:"影视剧 · 微电影 · 纪录片",en:"Drama, Short Films & Documentaries"},
   {k:"F",label:"F",zh:"AIGC 与 AI 赋能",en:"AIGC & AI Enablement"}
 ];
 const IMG="media/";
 /* 视频托管：与 REEL_VIDEO 一致（Cloudflare R2）；本地预览视频时改回 "assets/videos/" */
 const VID="https://video.baiyuanshan.com/";
 const WORKS=[
- {n:71,cat:"F",title:"AIGC剧集",title_en:"AIGC Drama Series",
+ {n:71,cat:"E",title:"哑巴红军",title_en:"The Silent Red Army Soldier",
   creditLabel:"Adapted from",client:"纪红建《哑巴红军》",client_en:"The Silent Red Army Soldier by Ji Hongjian",
   type:"历史题材 AI 微短剧 · 16 集",type_en:"Historical AI drama · 16 episodes",
   eyebrow:"《哑巴红军》",eyebrow_en:"The Silent Red Army Soldier",
@@ -1066,6 +1214,7 @@ const WORKS=[
  {n:70,cat:"F",title:"江右造物",client:"江西移动",type:"文创 AI 宣传片 / 非遗再生",eyebrow:"AI Creative · 文创",desc:"江西移动「江右造物文创大赛」AI 宣传片，以江豚、滕王阁、纸艺山水等本土意象，探索非遗文创的 AI 表达。",svc:"AI 生成 · 设计 · 合成",title_en:"Jiangyou Creations",client_en:"Jiangxi Mobile",type_en:"Cultural-Creative AI Film / Heritage Revival",eyebrow_en:"AI Creative · Cultural & Creative",desc_en:"An AI film for Jiangxi Mobile's 'Jiangyou Creations' cultural-creative contest — local motifs such as the finless porpoise, the Tengwang Pavilion and paper-art landscapes, exploring AI expression of intangible heritage.",svc_en:"AI generation · Design · Compositing",hero:"w_jzw_1.jpg",heroPos:"center 42%",vid:"jiangxi_mobile_jzw.mp4",g:[["w_jzw_2.jpg","江豚","Porpoise"],["w_jzw_3.jpg","滕王阁","Tengwang Pavilion"],["w_jzw_4.jpg","纸艺","Paper art"]]},
  {n:72,cat:"F",title:"AIGC赋能培训",client:"院校 · 企业 · 机构",type:"AIGC 培训 / 课程即生产",eyebrow:"AIGC Training",desc:"为院校与企业提供 AIGC 视觉内容专项培训，课程即生产、学习即交付，让能力真正长在团队里。",svc:"企业内训 · 校企共创 · 陪跑交付",title_en:"AIGC Training",client_en:"Schools · Enterprises · Institutions",type_en:"AIGC Training / Course-as-Production",eyebrow_en:"AIGC Training",desc_en:"Specialized AIGC visual-content training for schools and enterprises — course as production, learning as delivery, so capability truly takes root in the team.",svc_en:"In-house training · Campus co-creation · Hands-on delivery",hero:"train_3.jpeg",heroPos:"center 38%",g:[["train_2.jpeg","校企合作","Campus partnership"],["20260613-015104.jpg","培训现场","Training session"],["train_n5.jpg","互动","Interactive"],["works/mala_wangzi_aigc_training.jpg","麻辣王子 AIGC 课程结业","Mala Wangzi · Course completion"]]}
 ];
+
 
 /* ════════ PRELOADER · 开场动效：精选硬切闪映 → 固定角度光束剪影 → Logo 中线展开 → 语言选择 ════════ */
 (function(){
@@ -1275,22 +1424,23 @@ const WORKS=[
     const v2=v;setTimeout(()=>{if(v2.paused){tryPlay(true);}},350);  // 若被拦截，回退静音播放
   }
 
+  function selectWork(item, autoplay){
+    list.querySelectorAll('.wi.open').forEach(o=>{o.classList.remove('open');o.querySelector('.wrow').setAttribute('aria-expanded','false');});
+    stopWorkVideos(null);
+    if(!item)return;
+    hydrateWorkMedia(item);
+    item.classList.add('open');
+    item.querySelector('.wrow').setAttribute('aria-expanded','true');
+    const media=item.querySelector('.wdet__media[data-vid]');
+    if(autoplay && media){
+      setTimeout(()=>{if(item.classList.contains('open'))playMedia(media);},260);
+    }
+  }
   list.addEventListener('click',e=>{
-    if(e.target.closest('.wdet__media'))return;
     const row=e.target.closest('.wrow');
     if(!row)return;
     const item=row.closest('.wi');
-    const wasOpen=item.classList.contains('open');
-    // 折叠任何已展开的作品时，暂停其视频（否则收起后音频仍在播）
-    list.querySelectorAll('.wi.open').forEach(o=>{o.classList.remove('open');o.querySelector('.wrow').setAttribute('aria-expanded','false');});
-    stopWorkVideos(null);
-    if(!wasOpen){
-      hydrateWorkMedia(item);
-      item.classList.add('open');row.setAttribute('aria-expanded','true');
-      // 展开后自动播放（优先有声；浏览器策略拦截时回退静音）
-      const m=item.querySelector('.wdet__media[data-vid]');
-      if(m)setTimeout(()=>{if(item.classList.contains('open'))playMedia(m);},260);
-    }
+    selectWork(item.classList.contains('open') ? null : item, true);
   });
 
   list.addEventListener('click',e=>{
@@ -1310,6 +1460,26 @@ const WORKS=[
     list.querySelectorAll('.wi').forEach(it=>{const ok=(k==='ALL'||it.dataset.cat===k);it.classList.toggle('hide',!ok);if(ok)shown++;});
     countEl.textContent='['+String(shown).padStart(2,'0')+']';
   });
+
+  function revealLinkedWork(hash){
+    const item=document.getElementById(hash.slice(1));
+    if(!item || !list.contains(item) || !item.classList.contains('wi'))return;
+    if(item.classList.contains('hide'))filters.querySelector('[data-cat="ALL"]').click();
+    if(!item.classList.contains('open'))selectWork(item,false);
+    item.querySelector('.wrow').focus({preventScroll:true});
+    item.scrollIntoView({block:'start'});
+  }
+  document.querySelector('#centers').addEventListener('click',e=>{
+    const link=e.target.closest('a[data-work]');
+    if(link && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey)revealLinkedWork(link.hash);
+  });
+  window.addEventListener('hashchange',()=>revealLinkedWork(location.hash));
+  window.addEventListener('intro:done',()=>requestAnimationFrame(()=>{
+    const target=document.getElementById(location.hash.slice(1));
+    if(!target)return;
+    if(target.classList.contains('wi'))revealLinkedWork(location.hash);
+    else target.scrollIntoView({block:'start',behavior:'instant'});
+  }),{once:true});
 
   const cur=document.getElementById('cursorImg'),curImg=cur.querySelector('img');
   let raf=null,tx=innerWidth/2,ty=innerHeight/2,cx=tx,cy=ty;
@@ -1341,6 +1511,7 @@ const WORKS=[
 (function(){
   const hero=document.getElementById('hero'),heroMedia=document.getElementById('heroMedia');
   const header=document.getElementById('header'),navLinks=[...document.querySelectorAll('.nav a')];
+  const navSections=navLinks.map(link=>document.getElementById(link.hash.slice(1)));
   const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
   const tws=[...document.querySelectorAll('.rv')];
   let lastY=scrollY,ticking=false;
@@ -1379,12 +1550,15 @@ const WORKS=[
       if(y>lastY&&y>innerHeight*0.9)header.classList.remove('shown');else header.classList.add('shown');
     }
     header.classList.toggle('on-dark',darkUnderHeader());
-    const studio=document.getElementById('studio'),work=document.getElementById('work'),contact=document.getElementById('contact');
-    const probe=y+innerHeight*0.35;let active='#top';
-    if(studio&&probe>=studio.offsetTop)active='#studio';
-    if(work&&probe>=work.offsetTop)active='#work';
-    if(contact&&probe>=contact.offsetTop)active='#contact';
-    navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===active));
+    const probe=innerHeight*.35;
+    let active=0;
+    navSections.forEach((section,i)=>{if(section.getBoundingClientRect().top<=probe)active=i;});
+    navLinks.forEach((link,i)=>{
+      if(link.classList.contains('active')===(i===active))return;
+      link.classList.toggle('active',i===active);
+      if(i===active)link.setAttribute('aria-current','location');
+      else link.removeAttribute('aria-current');
+    });
     lastY=y;
   }
   function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(frame);}}
